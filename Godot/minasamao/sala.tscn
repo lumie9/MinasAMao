@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://bxnmio8urqknm"]
+
+[ext_resource type="Material" uid="uid://dmvblj2n8lfg6" path="res://textures/parede_frente.tres" id="1_4c8rp"]
+[ext_resource type="Script" uid="uid://c2udj7hp45cvu" path="res://textures/sala.gd" id="1_othsb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_othsb"]
+size = Vector3(0.5, 10, 8.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_12njc"]
+size = Vector3(0.5, 10, 8.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ekiu5"]
+size = Vector3(4.25, 10, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mil0d"]
+size = Vector3(4.5, 4, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4c8rp"]
+size = Vector3(12.5, 10, 8.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c8rp"]
+transparency = 4
+albedo_color = Color(1, 1, 1, 0.435294)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4huf4"]
+size = Vector3(12.5, 10, 7.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_12njc"]
+size = Vector3(4.5, 6, 1)
+
+[node name="Sala" type="Node3D"]
+script = ExtResource("1_othsb")
+
+[node name="Interna" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="left" type="MeshInstance3D" parent="Interna"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25, 0, 0)
+material_override = ExtResource("1_4c8rp")
+mesh = SubResource("BoxMesh_othsb")
+
+[node name="right" type="MeshInstance3D" parent="Interna"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25, 0, 0)
+material_override = ExtResource("1_4c8rp")
+mesh = SubResource("BoxMesh_12njc")
+
+[node name="coluna1" type="MeshInstance3D" parent="Interna"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.375, 0, 4.25)
+material_override = ExtResource("1_4c8rp")
+mesh = SubResource("BoxMesh_ekiu5")
+
+[node name="coluna2" type="MeshInstance3D" parent="Interna"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.375, 0, 4.25)
+material_override = ExtResource("1_4c8rp")
+mesh = SubResource("BoxMesh_ekiu5")
+
+[node name="coluna superior" type="MeshInstance3D" parent="Interna"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 4.25)
+material_override = ExtResource("1_4c8rp")
+mesh = SubResource("BoxMesh_mil0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interna"]
+shape = SubResource("BoxShape3D_4c8rp")
+
+[node name="neblina" type="MeshInstance3D" parent="Interna"]
+material_override = SubResource("StandardMaterial3D_4c8rp")
+mesh = SubResource("BoxMesh_4huf4")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 4.25)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02455, 0)
+shape = SubResource("BoxShape3D_12njc")
+debug_color = Color(6.73831e-07, 0.642149, 0.322629, 0.42)

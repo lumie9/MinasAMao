@@ -1,0 +1,104 @@
+[gd_scene load_steps=12 format=3 uid="uid://12v4swl5vmbr"]
+
+[ext_resource type="Script" uid="uid://dyjqafpfdky2x" path="res://wall.gd" id="1_xxgf6"]
+[ext_resource type="Material" uid="uid://dmvblj2n8lfg6" path="res://textures/parede_frente.tres" id="2_y4f30"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_iuee5"]
+size = Vector3(4, 10, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bbgl8"]
+size = Vector3(20, 2, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0m056"]
+size = Vector3(4, 10, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ip0a1"]
+transparency = 1
+albedo_color = Color(0.682353, 1, 1, 0.435294)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w36hb"]
+size = Vector3(15, 8, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vbm8d"]
+size = Vector3(50, 2, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kyjxe"]
+size = Vector3(10, 4, 0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xxgf6"]
+data = PackedVector3Array(-5, 2, 0.25, 5, 2, 0.25, -5, -2, 0.25, 5, 2, 0.25, 5, -2, 0.25, -5, -2, 0.25, 5, 2, -0.25, -5, 2, -0.25, 5, -2, -0.25, -5, 2, -0.25, -5, -2, -0.25, 5, -2, -0.25, 5, 2, 0.25, 5, 2, -0.25, 5, -2, 0.25, 5, 2, -0.25, 5, -2, -0.25, 5, -2, 0.25, -5, 2, -0.25, -5, 2, 0.25, -5, -2, -0.25, -5, 2, 0.25, -5, -2, 0.25, -5, -2, -0.25, 5, 2, 0.25, -5, 2, 0.25, 5, 2, -0.25, -5, 2, 0.25, -5, 2, -0.25, 5, 2, -0.25, -5, -2, 0.25, 5, -2, 0.25, -5, -2, -0.25, 5, -2, 0.25, 5, -2, -0.25, -5, -2, -0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nxxig"]
+size = Vector3(4, 10, 0.5)
+
+[node name="Frontal" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+script = ExtResource("1_xxgf6")
+
+[node name="Left" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.75, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left"]
+material_override = ExtResource("2_y4f30")
+mesh = SubResource("BoxMesh_iuee5")
+
+[node name="baixo" type="MeshInstance3D" parent="Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -4, 0)
+material_override = ExtResource("2_y4f30")
+mesh = SubResource("BoxMesh_bbgl8")
+
+[node name="pertoP" type="MeshInstance3D" parent="Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+material_override = ExtResource("2_y4f30")
+mesh = SubResource("BoxMesh_0m056")
+
+[node name="Janela" type="MeshInstance3D" parent="Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9529, 0, 0)
+material_override = SubResource("StandardMaterial3D_ip0a1")
+mesh = SubResource("BoxMesh_w36hb")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.330288, 0, 0)
+polygon = PackedVector2Array(-1.53815, 4.78636, -1.59967, -4.82457, 19.651, -4.7617, 19.498, 4.85163)
+
+[node name="Up" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Up"]
+material_override = ExtResource("2_y4f30")
+mesh = SubResource("BoxMesh_vbm8d")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Up"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.985495, 0)
+material_override = ExtResource("2_y4f30")
+mesh = SubResource("BoxMesh_kyjxe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Up"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.985495, 0)
+shape = SubResource("ConcavePolygonShape3D_xxgf6")
+
+[node name="Right" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.75, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right"]
+material_override = ExtResource("2_y4f30")
+mesh = SubResource("BoxMesh_nxxig")
+
+[node name="baixo" type="MeshInstance3D" parent="Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -4, 0)
+material_override = ExtResource("2_y4f30")
+mesh = SubResource("BoxMesh_bbgl8")
+
+[node name="pertoP" type="MeshInstance3D" parent="Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+material_override = ExtResource("2_y4f30")
+mesh = SubResource("BoxMesh_0m056")
+
+[node name="Janela" type="MeshInstance3D" parent="Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91577, 0, 0)
+material_override = SubResource("StandardMaterial3D_ip0a1")
+mesh = SubResource("BoxMesh_w36hb")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2625, 0, 0)
+polygon = PackedVector2Array(-1.53815, 4.78636, -1.59967, -4.82457, 19.651, -4.7617, 19.498, 4.85163)

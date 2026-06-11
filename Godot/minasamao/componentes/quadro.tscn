@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dllv8el266rlw"]
+
+[ext_resource type="Texture2D" uid="uid://bnn6fm2ko54cf" path="res://dados/expo1/quadro1_a.jpeg" id="1_6k42c"]
+[ext_resource type="Script" uid="uid://bswqslqxahct" path="res://componentes/quadro.gd" id="1_cegm5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w4nru"]
+size = Vector3(3, 4, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cegm5"]
+albedo_texture = ExtResource("1_6k42c")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6k42c"]
+size = Vector2(3, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cegm5"]
+size = Vector3(3, 4, 0.5)
+
+[node name="Quadro" type="Node3D"]
+script = ExtResource("1_cegm5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76295, 0)
+mesh = SubResource("BoxMesh_w4nru")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.763, 0.0590539)
+material_override = SubResource("StandardMaterial3D_cegm5")
+mesh = SubResource("PlaneMesh_6k42c")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.947657, 0.31929, 0, -0.31929, 0.947657, 0, 3.10527, 2.86085)
+spot_range = 4.75389
+spot_angle = 43.1897
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7776, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_cegm5")

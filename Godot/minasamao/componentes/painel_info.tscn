@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://cunhvdl7dkvnd"]
+
+[ext_resource type="Script" uid="uid://cm4swjk8bxoy0" path="res://componentes/painel_info.gd" id="1_7el01"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eg581"]
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_7el01"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yvpd8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bvj42"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r863i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2sryv"]
+font_size = 14
+
+[node name="PainelInfo" type="CanvasLayer"]
+script = ExtResource("1_7el01")
+
+[node name="Painel" type="MarginContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = 130.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxGeral" type="VBoxContainer" parent="Painel"]
+layout_mode = 2
+
+[node name="Foto" type="TextureRect" parent="Painel/VBoxGeral"]
+custom_minimum_size = Vector2(260, 180)
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ContadorRow" type="HBoxContainer" parent="Painel/VBoxGeral"]
+layout_mode = 2
+
+[node name="BtnAnterior" type="Button" parent="Painel/VBoxGeral/ContadorRow"]
+layout_mode = 2
+text = "<"
+
+[node name="Contador" type="Label" parent="Painel/VBoxGeral/ContadorRow"]
+layout_mode = 2
+
+[node name="BtnPosterior" type="Button" parent="Painel/VBoxGeral/ContadorRow"]
+layout_mode = 2
+text = ">"
+
+[node name="HSeparator3" type="HSeparator" parent="Painel/VBoxGeral"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="Painel/VBoxGeral"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_eg581")
+
+[node name="HSeparator" type="HSeparator" parent="Painel/VBoxGeral"]
+layout_mode = 2
+
+[node name="Autor" type="Label" parent="Painel/VBoxGeral"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7el01")
+
+[node name="Tecnica" type="Label" parent="Painel/VBoxGeral"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_yvpd8")
+
+[node name="Tamanho" type="Label" parent="Painel/VBoxGeral"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_bvj42")
+
+[node name="Ano" type="Label" parent="Painel/VBoxGeral"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_r863i")
+
+[node name="Descricao" type="Label" parent="Painel/VBoxGeral"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_2sryv")
+autowrap_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Painel/VBoxGeral"]
+layout_mode = 2
+
+[node name="BtnFechar" type="Button" parent="Painel/VBoxGeral"]
+layout_mode = 2
+text = "Fechar [ESC]"
