@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c650i51aimgad"]
+[gd_scene load_steps=24 format=3 uid="uid://c650i51aimgad"]
 
 [ext_resource type="Script" uid="uid://c15xkgllwfcg7" path="res://expos_1.gd" id="1_bxt2j"]
 [ext_resource type="Texture2D" uid="uid://cdgm270g3cwct" path="res://textures/plank_flooring_04_diff_4k.jpg" id="2_2hvjy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b16c52d3yiv4k" path="res://jogador/player.tscn" id="4_8v8sr"]
 [ext_resource type="PackedScene" uid="uid://dllv8el266rlw" path="res://componentes/quadro.tscn" id="5_50xn2"]
 [ext_resource type="PackedScene" uid="uid://cunhvdl7dkvnd" path="res://componentes/painel_info.tscn" id="6_i6fak"]
+[ext_resource type="PackedScene" uid="uid://dfjhh4nwi2cf6" path="res://componentes/painel_artista.tscn" id="7_2hvjy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrlg7"]
 albedo_texture = ExtResource("2_2hvjy")
@@ -162,15 +163,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.94251, 16.4817)
 material_override = SubResource("StandardMaterial3D_7qdru")
 mesh = SubResource("BoxMesh_0byf5")
 
-[node name="Quadro" parent="." instance=ExtResource("5_50xn2")]
-transform = Transform3D(0.0577731, 0, -0.99833, 0, 1, 0, 0.99833, 0, 0.0577731, 5.82938, 2.90547, 0)
-
-[node name="Quadro2" parent="." instance=ExtResource("5_50xn2")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.94004, 2.985, 0)
-id_quadro = "quadro_2"
-
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456448, 4.99928, -4.72873)
 omni_range = 4096.0
 
 [node name="PainelInfo" parent="." instance=ExtResource("6_i6fak")]
+
+[node name="PainelArtista" parent="." instance=ExtResource("7_2hvjy")]
+
+[node name="Quadro" parent="." instance=ExtResource("5_50xn2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 3, -2)
+
+[node name="Quadro2" parent="." instance=ExtResource("5_50xn2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 3, 2)
+id_quadro = "quadro_2"

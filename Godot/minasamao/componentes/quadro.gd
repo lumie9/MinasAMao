@@ -25,7 +25,10 @@ func _carregar_dados():
 		"tamanho":  cfg.get_value(id_quadro, "tamanho",  ""),
 		"ano":      cfg.get_value(id_quadro, "ano",      ""),
 		"descricao":cfg.get_value(id_quadro, "descricao",""),
-		"fotos":    cfg.get_value(id_quadro, "fotos",    "").split(",", false)
+		"fotos":    cfg.get_value(id_quadro, "fotos",    "").split(",", false),
+		"artista_nome_completo": cfg.get_value(id_quadro, "artista_nome_completo", ""),
+		"artista_instagram":     cfg.get_value(id_quadro, "artista_instagram",     ""),
+		"artista_descricao":     cfg.get_value(id_quadro, "artista_descricao",     ""),
 	}
 	
 	var fotos = Dados.get("fotos", [])

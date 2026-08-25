@@ -36,10 +36,17 @@ func mostrar(info: Dictionary, quadro: Node):
 	fotos = info.get("fotos", [])
 	indice_atual = 0
 	_atualizar_foto()
-
+	
+	var painel_artista= _encontrar_painel_artista()
+	if painel_artista:
+		painel_artista.mostrar(info)
+	
 	painel.visible = true
 	foto_principal.visible = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	
+	
 
 func fechar():
 	painel.visible = false
@@ -48,6 +55,23 @@ func fechar():
 	if player:
 		player._soltar_camera()
 	
+	var painel_artista = _encontrar_painel_artista()
+	if painel_artista:
+		painel_artista.fechar()
+
+func _encontrar_painel_artista() -> Node:
+	var raiz = get_tree().current_scene
+	return _buscar_no(raiz, "PainelArtista")
+
+func _buscar_no(no: Node, nome: String) -> Node:
+	if no.name == nome:
+		return no
+	for filho in no.get_children():
+		var r = _buscar_no(filho, nome)
+		if r:
+			return r
+	return null
+
 func _foto_anterior():
 	if fotos.size() == 0:
 		return
