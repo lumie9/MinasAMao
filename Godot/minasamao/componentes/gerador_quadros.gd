@@ -2,7 +2,7 @@ extends Node
 
 const QUADRO_CENA = preload("res://componentes/quadro.tscn")
 
-const ALTURA_QUADRO = 1.8
+const ALTURA_QUADRO = 3
 const ESPACO_ENTRE = 4.0
 
 func gerar(cena_pai: Node, caminho_cfg: String):
@@ -59,17 +59,17 @@ func _colocar_na_parede(pai: Node, _cfg: ConfigFile, secoes: Array, parede: Stri
 	)
 			"esquerda":
 				quadro.transform = Transform3D(
-					 Vector3(-4.37114e-08, 0, 1),
+					 Vector3(4.37114e-08, 0, -1),
 					Vector3(0, 1, 0),
-					Vector3(-1, 0, -4.37114e-08),
-					Vector3(-6.1, ALTURA_QUADRO, offset)
+					Vector3(1, 0, 4.37114e-08),
+					Vector3(-6.0, ALTURA_QUADRO, offset)
 				)  
 			"direita":
 				quadro.transform = Transform3D(
-		Vector3(4.37114e-08, 0, -1),
+		Vector3(-4.37114e-08, 0, 1),
 		Vector3(0, 1, 0),
-		Vector3(1, 0, 4.37114e-08),
-		Vector3(6.1, ALTURA_QUADRO, offset)
+		Vector3(-1, 0, -4.37114e-08),
+		Vector3(6.0, ALTURA_QUADRO, offset)
 	)
 
 		# add_child DEPOIS de tudo configurado
