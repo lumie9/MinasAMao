@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://dy2r5jgblpu1h"]
+
+[ext_resource type="Script" uid="uid://bswqslqxahct" path="res://componentes/quadro.gd" id="1_lsqlm"]
+[ext_resource type="Texture2D" uid="uid://bnn6fm2ko54cf" path="res://dados/expo1/quadro1_a.jpeg" id="2_s0p24"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_srvbd"]
+top_radius = 0.6
+bottom_radius = 0.6
+height = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdmqg"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.117647)
+
+[sub_resource type="BoxMesh" id="BoxMesh_phnbp"]
+material = SubResource("StandardMaterial3D_qdmqg")
+size = Vector3(3, 4, 1.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lsqlm"]
+albedo_texture = ExtResource("2_s0p24")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j2w3i"]
+size = Vector2(2.7, 3.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nths"]
+size = Vector3(3, 4, 1.2)
+
+[node name="Escultura" type="Node3D"]
+script = ExtResource("1_lsqlm")
+
+[node name="Coluna" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("CylinderMesh_srvbd")
+
+[node name="CaixaVidro" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+mesh = SubResource("BoxMesh_phnbp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 4.8, 0.1)
+material_override = SubResource("StandardMaterial3D_lsqlm")
+mesh = SubResource("PlaneMesh_j2w3i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_3nths")
