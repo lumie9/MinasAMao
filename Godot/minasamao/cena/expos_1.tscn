@@ -11,39 +11,39 @@
 albedo_texture = ExtResource("2_2hvjy")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pjpa0"]
-size = Vector2(12.5, 50)
+size = Vector2(20, 50)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ptkhr"]
-data = PackedVector3Array(6.25, 0, 12.5, -6.25, 0, 12.5, 6.25, 0, -12.5, -6.25, 0, 12.5, -6.25, 0, -12.5, 6.25, 0, -12.5)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bxt2j"]
+data = PackedVector3Array(10, 0, 25, -10, 0, 25, 10, 0, -25, -10, 0, 25, -10, 0, -25, 10, 0, -25)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vqefd"]
-size = Vector3(12.5, 10, 0.5)
+size = Vector3(20, 13, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b1sl8"]
-size = Vector3(15, 10, 0.5)
+size = Vector3(20, 13, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dynkw"]
-size = Vector3(0.5, 10, 25)
+size = Vector3(0.5, 13, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3inss"]
-size = Vector3(50, 10, 0.5)
+size = Vector3(50, 13, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i468a"]
-size = Vector3(4.25, 10, 0.5)
+size = Vector3(7.5, 13, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xypwg"]
-size = Vector3(4.5, 4, 0.5)
+size = Vector3(6, 5.2, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mcc45"]
 size = Vector3(12.5, 10, 0.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l8oaf"]
-size = Vector3(4.5, 6, 0.5)
+size = Vector3(5.65308, 7.91589, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxt2j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7qdru"]
-size = Vector3(12.5, 0.5, 50)
+size = Vector3(20, 0.5, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0byf5"]
 size = Vector3(12.5, 0.5, 25)
@@ -65,12 +65,12 @@ material_override = SubResource("StandardMaterial3D_xrlg7")
 mesh = SubResource("PlaneMesh_pjpa0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Piso"]
-shape = SubResource("ConcavePolygonShape3D_ptkhr")
+shape = SubResource("ConcavePolygonShape3D_bxt2j")
 
 [node name="Paredes" type="Node3D" parent="."]
 
 [node name="Wall2" type="StaticBody3D" parent="Paredes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -12.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, -20)
 
 [node name="Forma" type="MeshInstance3D" parent="Paredes/Wall2"]
 material_override = ExtResource("3_xjjqk")
@@ -80,7 +80,7 @@ mesh = SubResource("BoxMesh_vqefd")
 shape = SubResource("BoxShape3D_b1sl8")
 
 [node name="Wall3" type="StaticBody3D" parent="Paredes"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.25, 5, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 6.5, 0)
 
 [node name="Colisao" type="CollisionShape3D" parent="Paredes/Wall3"]
 transform = Transform3D(-0.00911049, 0, -0.999959, 0, 1, 0, 0.999959, 0, -0.00911049, 0, 0, 0)
@@ -91,7 +91,7 @@ material_override = ExtResource("3_xjjqk")
 mesh = SubResource("BoxMesh_3inss")
 
 [node name="Wall4" type="StaticBody3D" parent="Paredes"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.25, 5, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 6.5, 0)
 
 [node name="Forma" type="MeshInstance3D" parent="Paredes/Wall4"]
 material_override = ExtResource("3_xjjqk")
@@ -102,20 +102,20 @@ transform = Transform3D(-0.00911049, 0, -0.999959, 0, 1, 0, 0.999959, 0, -0.0091
 shape = SubResource("BoxShape3D_dynkw")
 
 [node name="Wall" type="StaticBody3D" parent="Paredes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 12.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 12.5)
 
 [node name="coluna1" type="MeshInstance3D" parent="Paredes/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.375, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0)
 material_override = ExtResource("3_xjjqk")
 mesh = SubResource("BoxMesh_i468a")
 
 [node name="coluna2" type="MeshInstance3D" parent="Paredes/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.375, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0)
 material_override = ExtResource("3_xjjqk")
 mesh = SubResource("BoxMesh_i468a")
 
 [node name="coluna superior" type="MeshInstance3D" parent="Paredes/Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 0)
 material_override = ExtResource("3_xjjqk")
 mesh = SubResource("BoxMesh_xypwg")
 
@@ -123,7 +123,7 @@ mesh = SubResource("BoxMesh_xypwg")
 shape = SubResource("BoxShape3D_mcc45")
 
 [node name="Wall5" type="StaticBody3D" parent="Paredes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 23.7857)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 24.797)
 
 [node name="Forma" type="MeshInstance3D" parent="Paredes/Wall5"]
 material_override = ExtResource("3_xjjqk")
@@ -140,15 +140,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 12.5)
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105347, 0.957947, 0)
 shape = SubResource("BoxShape3D_l8oaf")
 debug_color = Color(0, 0.648277, 0.186039, 0.42)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.261272, 5.20446, 5.60774)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.261272, 5.72181, 5.60774)
 omni_range = 4096.0
 
 [node name="Teto" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.7378, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Teto"]
 material_override = SubResource("StandardMaterial3D_bxt2j")
@@ -163,7 +164,7 @@ material_override = SubResource("StandardMaterial3D_7qdru")
 mesh = SubResource("BoxMesh_0byf5")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456448, 4.99928, -4.72873)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456448, 8.52207, -4.72873)
 omni_range = 4096.0
 
 [node name="PainelInfo" parent="." instance=ExtResource("6_i6fak")]

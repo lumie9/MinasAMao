@@ -9,7 +9,7 @@ var gravity := 12.0
 var pitch = 0.0
 
 var camera_travada := false
-var altura_quadro := 1.76
+var altura_quadro := 1
 var rotacao_alvo := 0.0
 var altura_head_original: float= 0.0  
 

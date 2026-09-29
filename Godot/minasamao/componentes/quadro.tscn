@@ -4,16 +4,16 @@
 [ext_resource type="Script" uid="uid://bswqslqxahct" path="res://componentes/quadro.gd" id="1_cegm5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w4nru"]
-size = Vector3(3, 4, 0.1)
+size = Vector3(3.9, 5.2, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cegm5"]
 albedo_texture = ExtResource("1_6k42c")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6k42c"]
-size = Vector2(3, 4)
+size = Vector2(3.9, 5.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cegm5"]
-size = Vector3(3, 4, 0.5)
+size = Vector3(3.9, 5.2, 0.5)
 
 [node name="Quadro" type="Node3D"]
 script = ExtResource("1_cegm5")

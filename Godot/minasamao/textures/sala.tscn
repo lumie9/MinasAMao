@@ -4,58 +4,58 @@
 [ext_resource type="Script" uid="uid://b1kjkao2yy80w" path="res://sala.gd" id="1_othsb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_othsb"]
-size = Vector3(0.5, 10, 8.5)
+size = Vector3(0.5, 13, 13.6)
 
 [sub_resource type="BoxMesh" id="BoxMesh_12njc"]
-size = Vector3(0.5, 10, 8.5)
+size = Vector3(0.5, 13, 13.6)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ekiu5"]
-size = Vector3(4.25, 10, 0.5)
+size = Vector3(7.5, 13, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mil0d"]
-size = Vector3(4.5, 4, 0.5)
+size = Vector3(6, 5.2, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4c8rp"]
-size = Vector3(12.5, 10, 8.5)
+size = Vector3(20, 13, 13.6)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c8rp"]
 transparency = 4
 albedo_color = Color(1, 1, 1, 0.435294)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4huf4"]
-size = Vector3(12.5, 10, 7.5)
+size = Vector3(20, 13, 13.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_12njc"]
-size = Vector3(4.5, 6, 1)
+size = Vector3(5.63872, 7.82117, 1)
 
 [node name="Sala" type="Node3D"]
 script = ExtResource("1_othsb")
 
 [node name="Interna" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0)
 
 [node name="left" type="MeshInstance3D" parent="Interna"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 material_override = ExtResource("1_4c8rp")
 mesh = SubResource("BoxMesh_othsb")
 
 [node name="right" type="MeshInstance3D" parent="Interna"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 material_override = ExtResource("1_4c8rp")
 mesh = SubResource("BoxMesh_12njc")
 
 [node name="coluna1" type="MeshInstance3D" parent="Interna"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.375, 0, 4.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6.8)
 material_override = ExtResource("1_4c8rp")
 mesh = SubResource("BoxMesh_ekiu5")
 
 [node name="coluna2" type="MeshInstance3D" parent="Interna"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.375, 0, 4.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 6.8)
 material_override = ExtResource("1_4c8rp")
 mesh = SubResource("BoxMesh_ekiu5")
 
 [node name="coluna superior" type="MeshInstance3D" parent="Interna"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 4.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 6.8)
 material_override = ExtResource("1_4c8rp")
 mesh = SubResource("BoxMesh_mil0d")
 
@@ -71,6 +71,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 4.25)
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.02455, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000923157, -1.11397, 2.47095)
 shape = SubResource("BoxShape3D_12njc")
 debug_color = Color(6.73831e-07, 0.642149, 0.322629, 0.42)

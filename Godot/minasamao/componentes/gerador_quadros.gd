@@ -3,9 +3,9 @@ extends Node
 const QUADRO_CENA = preload("res://componentes/quadro.tscn")
 const ESCULTURA_CENA = preload("res://componentes/escultura.tscn")
 
-const ALTURA_QUADRO = 3
+const ALTURA_QUADRO = 3.9
 const ALTURA_ESCULTURA = 0
-const ESPACO_ENTRE = 4.0
+const ESPACO_ENTRE = 6
 
 func gerar(cena_pai: Node, caminho_cfg: String):
 	var cfg = ConfigFile.new()
@@ -56,28 +56,28 @@ func _colocar_na_parede(pai: Node, _cfg: ConfigFile, secoes: Array, parede: Stri
 		Vector3(1, 0, 0),
 		Vector3(0, 1, 0),
 		Vector3(0, 0, 1),
-		Vector3(offset, altura, -12.2)
+		Vector3(offset, altura, -19.52)
 	)
 			"frente":
 				item.transform = Transform3D(
 		Vector3(-1, 0, 0),
 		Vector3(0, 1, 0),
 		Vector3(0, 0, -1),
-		Vector3(offset, altura, 12.2)
+		Vector3(offset, altura, 19.52)
 	)
 			"esquerda":
 				item.transform = Transform3D(
 					 Vector3(4.37114e-08, 0, -1),
 					Vector3(0, 1, 0),
 					Vector3(1, 0, 4.37114e-08),
-					Vector3(-6.0, altura, offset)
+					Vector3(-9.6, altura, offset)
 				)  
 			"direita":
 				item.transform = Transform3D(
 		Vector3(-4.37114e-08, 0, 1),
 		Vector3(0, 1, 0),
 		Vector3(-1, 0, -4.37114e-08),
-		Vector3(6.0, altura, offset)
+		Vector3(9.6, altura, offset)
 	)
 
 		# add_child DEPOIS de tudo configurado

@@ -1,9 +1,8 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dmvblj2n8lfg6"]
 
-[ext_resource type="Texture2D" uid="uid://c41jfefgs036d" path="res://textures/Brick_Wall_028_basecolor.png" id="1_cvvbd"]
+[ext_resource type="Texture2D" uid="uid://c8p8y1lu7fvob" path="res://textures/white_stucco_diff_4k.jpg" id="1_cvvbd"]
 
 [resource]
-albedo_color = Color(0.998013, 0.938095, 0.807178, 1)
 albedo_texture = ExtResource("1_cvvbd")
 uv1_scale = Vector3(0.2, 0.2, 0.2)
 uv1_triplanar = true
