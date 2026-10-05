@@ -45,3 +45,6 @@ func trocar_foto(caminho: String):
 	var tex = load(caminho)
 	if tex:
 		material_quadro.material_override.albedo_texture = tex
+
+func get_altura_focal() -> float:
+	return $MeshInstance3D2.global_position.y

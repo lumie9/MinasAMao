@@ -9,7 +9,7 @@ var gravity := 12.0
 var pitch = 0.0
 
 var camera_travada := false
-var altura_quadro := 1
+var altura_quadro := 1	
 var rotacao_alvo := 0.0
 var altura_head_original: float= 0.0  
 
@@ -56,13 +56,18 @@ func _verificar_quadro():
 		if quadro:
 			var painel = _encontrar_painel()
 			if painel:
-				_travar_camera_em()
+				_travar_camera_em(quadro)
 				painel.mostrar(quadro.get_info(), quadro)
 
-func _travar_camera_em():
+func _travar_camera_em(quadro: Node):
 	camera_travada = true
-	# desconta a altura base do head (3.662) para chegar na posição local correta
-	var altura_alvo = 4.75
+	#var player_y_chao = global_position.y - altura_head_original
+	#var altura_alvo = quadro.global_position.y - player_y_chao
+	
+	#print("Quadro Y global: ", quadro.global_position.y)
+	#print("Player Y global: ", player_y_chao)
+	#print("Altura alvo head: ", altura_alvo)
+	var altura_alvo = 3.9
 	var tween = create_tween()
 	tween.tween_property(head, "position:y", altura_alvo, 0.4)
 	tween.parallel().tween_property(head, "rotation:x", 0.0, 0.4)
