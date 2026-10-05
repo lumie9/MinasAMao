@@ -145,8 +145,8 @@ shape = SubResource("BoxShape3D_l8oaf")
 debug_color = Color(0, 0.648277, 0.186039, 0.42)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.261272, 5.72181, 5.60774)
-omni_range = 4096.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.442355, 7.84827, 5.74231)
+omni_range = 23.2969
 
 [node name="Teto" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 0)
@@ -164,9 +164,15 @@ material_override = SubResource("StandardMaterial3D_7qdru")
 mesh = SubResource("BoxMesh_0byf5")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456448, 8.52207, -4.72873)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12033, 6.72605, -9.07536)
 omni_range = 4096.0
 
 [node name="PainelInfo" parent="." instance=ExtResource("6_i6fak")]
 
 [node name="PainelArtista" parent="." instance=ExtResource("7_2hvjy")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.951256, 0.308403, 0, -0.308403, 0.951256, 0, 10.3878, 11.6844)
+light_energy = 8.434
+spot_range = 112.622
+spot_angle = 72.8751
