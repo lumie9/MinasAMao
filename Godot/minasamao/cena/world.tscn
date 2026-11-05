@@ -105,7 +105,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, -20)
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.5499, 0, 14.1862)
 
 [node name="Sala2" parent="." instance=ExtResource("4_86uqu")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.84881, 0, 14.1862)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.2507, 0, 14.1862)
 caminho_obras = "res://dados/expo2/obras.cfg"
 
 [node name="Sala3" parent="." instance=ExtResource("4_86uqu")]
@@ -128,9 +128,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.9186, 0)
 shape = SubResource("ConcavePolygonShape3D_gbfbk")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.05611, -4.15569)
+transform = Transform3D(-0.0280263, 0.859684, -0.510057, 0, -0.510258, -0.860022, -0.999607, -0.0241032, 0.0143006, 0.339478, 6.57529, -8.63863)
 light_energy = 7.056
 omni_range = 55.0
+omni_attenuation = 0.8
 
 [node name="Player" parent="." instance=ExtResource("6_g2j1f")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.642863, -5.22248)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.13664, -5.22248)
