@@ -22,16 +22,19 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		var painel = _encontrar_painel()
+		var botao_cor = _botao_com_painel_aberto()
 		if painel and painel.painel.visible:
 			painel.fechar()
 			_soltar_camera()
+		elif botao_cor:
+			botao_cor.fechar_painel()
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			var painel = _encontrar_painel()
-			var painel_aberto = painel and painel.painel.visible
+			var painel_aberto = (painel and painel.painel.visible) or _botao_com_painel_aberto() != null
 			if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and not camera_travada:
 				_verificar_quadro()
 			elif Input.mouse_mode != Input.MOUSE_MODE_CAPTURED and not painel_aberto:
@@ -52,6 +55,12 @@ func _verificar_quadro():
 
 	var resultado = espaco.intersect_ray(query)
 	if resultado:
+		# Objetos interagíveis (ex.: botão de cor das paredes)
+		var interagivel = _encontrar_interagivel(resultado.collider)
+		if interagivel:
+			interagivel.interagir()
+			get_viewport().set_input_as_handled()  # o mesmo clique não cai no painel que acabou de abrir
+			return
 		var quadro = _encontrar_quadro(resultado.collider)
 		if quadro:
 			var painel = _encontrar_painel()
@@ -85,6 +94,23 @@ func _encontrar_quadro(no: Node) -> Node:
 		if atual.has_method("get_info"):
 			return atual
 		atual = atual.get_parent()
+	return null
+
+func _encontrar_interagivel(no: Node) -> Node:
+	var atual = no
+	for i in range(3):
+		if atual == null:
+			break
+		if atual.has_method("interagir"):
+			return atual
+		atual = atual.get_parent()
+	return null
+
+# Retorna o botão (grupo "interagivel") cujo painel está aberto, se houver.
+func _botao_com_painel_aberto() -> Node:
+	for no in get_tree().get_nodes_in_group("interagivel"):
+		if no.has_method("painel_aberto") and no.painel_aberto():
+			return no
 	return null
 
 func _encontrar_painel() -> Node:

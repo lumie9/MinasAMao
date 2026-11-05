@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c650i51aimgad"]
+[gd_scene load_steps=24 format=3 uid="uid://c650i51aimgad"]
 
 [ext_resource type="Script" uid="uid://c15xkgllwfcg7" path="res://expos_1.gd" id="1_bxt2j"]
 [ext_resource type="Texture2D" uid="uid://cdgm270g3cwct" path="res://textures/plank_flooring_04_diff_4k.jpg" id="2_2hvjy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b16c52d3yiv4k" path="res://jogador/player.tscn" id="4_8v8sr"]
 [ext_resource type="PackedScene" uid="uid://cunhvdl7dkvnd" path="res://componentes/painel_info.tscn" id="6_i6fak"]
 [ext_resource type="PackedScene" uid="uid://dfjhh4nwi2cf6" path="res://componentes/painel_artista.tscn" id="7_2hvjy"]
+[ext_resource type="PackedScene" path="res://componentes/botao_cor.tscn" id="8_botaocor"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrlg7"]
 albedo_texture = ExtResource("2_2hvjy")
@@ -72,7 +73,7 @@ shape = SubResource("ConcavePolygonShape3D_bxt2j")
 [node name="Wall2" type="StaticBody3D" parent="Paredes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, -20)
 
-[node name="Forma" type="MeshInstance3D" parent="Paredes/Wall2"]
+[node name="Forma" type="MeshInstance3D" parent="Paredes/Wall2" groups=["parede_pintavel"]]
 material_override = ExtResource("3_xjjqk")
 mesh = SubResource("BoxMesh_vqefd")
 
@@ -86,14 +87,14 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 6.
 transform = Transform3D(-0.00911049, 0, -0.999959, 0, 1, 0, 0.999959, 0, -0.00911049, 0, 0, 0)
 shape = SubResource("BoxShape3D_dynkw")
 
-[node name="Forma" type="MeshInstance3D" parent="Paredes/Wall3"]
+[node name="Forma" type="MeshInstance3D" parent="Paredes/Wall3" groups=["parede_pintavel"]]
 material_override = ExtResource("3_xjjqk")
 mesh = SubResource("BoxMesh_3inss")
 
 [node name="Wall4" type="StaticBody3D" parent="Paredes"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 6.5, 0)
 
-[node name="Forma" type="MeshInstance3D" parent="Paredes/Wall4"]
+[node name="Forma" type="MeshInstance3D" parent="Paredes/Wall4" groups=["parede_pintavel"]]
 material_override = ExtResource("3_xjjqk")
 mesh = SubResource("BoxMesh_3inss")
 
@@ -104,17 +105,17 @@ shape = SubResource("BoxShape3D_dynkw")
 [node name="Wall" type="StaticBody3D" parent="Paredes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 12.5)
 
-[node name="coluna1" type="MeshInstance3D" parent="Paredes/Wall"]
+[node name="coluna1" type="MeshInstance3D" parent="Paredes/Wall" groups=["parede_pintavel"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 0)
 material_override = ExtResource("3_xjjqk")
 mesh = SubResource("BoxMesh_i468a")
 
-[node name="coluna2" type="MeshInstance3D" parent="Paredes/Wall"]
+[node name="coluna2" type="MeshInstance3D" parent="Paredes/Wall" groups=["parede_pintavel"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0)
 material_override = ExtResource("3_xjjqk")
 mesh = SubResource("BoxMesh_i468a")
 
-[node name="coluna superior" type="MeshInstance3D" parent="Paredes/Wall"]
+[node name="coluna superior" type="MeshInstance3D" parent="Paredes/Wall" groups=["parede_pintavel"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 0)
 material_override = ExtResource("3_xjjqk")
 mesh = SubResource("BoxMesh_xypwg")
@@ -176,3 +177,6 @@ transform = Transform3D(1, 0, 0, 0, 0.951256, 0.308403, 0, -0.308403, 0.951256, 
 light_energy = 8.434
 spot_range = 112.622
 spot_angle = 72.8751
+
+[node name="BotaoCor" parent="." instance=ExtResource("8_botaocor")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 4.6, 3.6, 12.25)
