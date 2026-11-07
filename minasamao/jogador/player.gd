@@ -68,7 +68,7 @@ func _verificar_quadro():
 				_travar_camera_em(quadro)
 				painel.mostrar(quadro.get_info(), quadro)
 
-func _travar_camera_em(quadro: Node):
+func _travar_camera_em(_quadro: Node):
 	camera_travada = true
 	#var player_y_chao = global_position.y - altura_head_original
 	#var altura_alvo = quadro.global_position.y - player_y_chao
